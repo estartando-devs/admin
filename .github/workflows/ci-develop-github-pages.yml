@@ -11,6 +11,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    env:
+        REACT_APP_APIKEY: ${{secrets.REACT_APP_APIKEY}}
+        REACT_APP_AUTH_DOMAIN: ${{secrets.REACT_APP_AUTH_DOMAIN}}
+        REACT_APP_DATABASE_URL: ${{secrets.REACT_APP_DATABASE_URL}}
+        REACT_APP_PROJECT_ID: ${{secrets.REACT_APP_PROJECT_ID}}
+        REACT_APP_STORAGE_BUCKET: ${{secrets.REACT_APP_STORAGE_BUCKET}}
+        REACT_APP_MESSAGING_SENDER_ID: ${{secrets.REACT_APP_MESSAGING_SENDER_ID}}
+        REACT_APP_APP_ID: ${{secrets.REACT_APP_APP_ID}}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
 
     strategy:
       matrix:
@@ -25,12 +35,4 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - run: npm run deploy
-      env:
-        REACT_APP_APIKEY: ${{secrets.REACT_APP_APIKEY}}
-        REACT_APP_AUTH_DOMAIN: ${{secrets.REACT_APP_AUTH_DOMAIN}}
-        REACT_APP_DATABASE_URL: ${{secrets.REACT_APP_DATABASE_URL}}
-        REACT_APP_PROJECT_ID: ${{secrets.REACT_APP_PROJECT_ID}}
-        REACT_APP_STORAGE_BUCKET: ${{secrets.REACT_APP_STORAGE_BUCKET}}
-        REACT_APP_MESSAGING_SENDER_ID: ${{secrets.REACT_APP_MESSAGING_SENDER_ID}}
-        REACT_APP_APP_ID: ${{secrets.REACT_APP_APP_ID}}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+      
