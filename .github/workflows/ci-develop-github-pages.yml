@@ -35,6 +35,6 @@ jobs:
     - run: npm install
     - run: git config user.email ${{ secrets.USER_EMAIL }}
     - run: git config user.name ${{ secrets.USER_NAME }}
-    - run: git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ secrets.USER_NAME }}/admin.git
+    - run: git remote set-url origin https://${{ secrets.CI_GITHUB_TOKEN }}@github.com/${{ secrets.USER_NAME }}/admin.git
     - run: npm run deploy
       
