@@ -20,8 +20,6 @@ const config = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-console.log("CONFIG :: ", config);
-
 const options = {
   logging: true,
   rootRef: "root_collection/document",

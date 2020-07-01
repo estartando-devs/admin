@@ -5,7 +5,6 @@ import {
   TextField,
   Show,
   SimpleShowLayout,
-  ImageField,
   BooleanField,
 } from "react-admin";
 
@@ -15,8 +14,8 @@ export const SubscriberList = (props) => (
       <TextField source="name" />
       <TextField source="email" />
       <TextField source="phone" />
-      <ImageField source="neighborhood" />
-      <ImageField source="city" />
+      <TextField source="neighborhood" />
+      <TextField source="city" />
       <BooleanField source="isStudent" />
       <BooleanField source="availableTime" />
       <TextField source="course" />
@@ -31,9 +30,8 @@ export const SubscriberShow = (props) => (
       <TextField source="email" />
       <TextField source="phone" />
       <TextField source="address" />
-      <ImageField source="number" />
-      <ImageField source="neighborhood" />
-      <ImageField source="city" />
+      <TextField source="neighborhood" />
+      <TextField source="city" />
       <BooleanField source="isStudent" />
       <BooleanField source="availableTime" />
       <TextField source="course" />
