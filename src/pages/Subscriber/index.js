@@ -1,3 +1,7 @@
-import { SubscriberList, SubscriberShow } from "./Subscriber";
+import {
+  SubscriberList,
+  SubscriberShow,
+  SubscriberCreateOrEdit,
+} from "./Subscriber";
 
-export { SubscriberList, SubscriberShow };
+export { SubscriberList, SubscriberShow, SubscriberCreateOrEdit };

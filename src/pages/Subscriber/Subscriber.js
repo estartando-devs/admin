@@ -6,18 +6,34 @@ import {
   Show,
   SimpleShowLayout,
   BooleanField,
+  Edit,
+  Create,
+  SimpleForm,
+  TextInput,
+  BooleanInput,
+  ArrayInput,
+  SimpleFormIterator,
+  Filter,
 } from "react-admin";
 
+const SubscriberFilter = (props) => (
+  <Filter {...props}>
+    <TextInput source="fullName" label="Full Name" alwaysOn />
+    <TextInput source="email" label="Email" alwaysOn />
+  </Filter>
+);
 export const SubscriberList = (props) => (
-  <List {...props}>
-    <Datagrid>
-      <TextField source="name" />
+  <List {...props} filters={<SubscriberFilter />}>
+    <Datagrid rowClick="edit">
+      <TextField source="fullName" />
       <TextField source="email" />
-      <TextField source="phone" />
-      <TextField source="neighborhood" />
+      <BooleanField source="approved" />
+      <BooleanField source="hackathon" />
+      {/* <TextField source="phone" /> */}
+      {/* <TextField source="neighborhood" /> */}
       <TextField source="city" />
-      <BooleanField source="isStudent" />
-      <BooleanField source="availableTime" />
+      {/* <BooleanField source="isStudent" /> */}
+      {/* <BooleanField source="availableTime" /> */}
       <TextField source="course" />
     </Datagrid>
   </List>
@@ -26,7 +42,8 @@ export const SubscriberList = (props) => (
 export const SubscriberShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-      <TextField source="name" />
+      <TextField source="course" />
+      <TextField source="fullName" />
       <TextField source="email" />
       <TextField source="phone" />
       <TextField source="address" />
@@ -34,30 +51,36 @@ export const SubscriberShow = (props) => (
       <TextField source="city" />
       <BooleanField source="isStudent" />
       <BooleanField source="availableTime" />
-      <TextField source="course" />
+      <BooleanField source="approved" />
+      <BooleanField source="hackathon" />
       <TextField source="testimony" />
+      <TextField source="observation" />
     </SimpleShowLayout>
   </Show>
 );
 
-// const CreateOrEdit = (props) => {
-//   if (props.id) return <Edit title="Editar Aluno" {...props} />;
-//   return <Create title="Criar Aluno" {...props} />;
-// };
+const CreateOrEdit = (props) => {
+  if (props.id) return <Edit title="Edit Subscriber" {...props} />;
+  return <Create title="Create Subscriber" {...props} />;
+};
 
-// export const SubscriberCreateOrEdit = (props) => (
-//   <CreateOrEdit {...props}>
-//     <SimpleForm>
-//       <TextInput source="name" />
-//       <TextInput source="email" />
-//       <TextInput source="phone" />
-//       <TextInput source="address" />
-//       <ReferenceInput label="Turma" source="class" reference="classes">
-//         <SelectInput optionText="name" />
-//       </ReferenceInput>
-//       <FileInput source="image" label="Imagem">
-//         <FileField source="src" title="title" />
-//       </FileInput>
-//     </SimpleForm>
-//   </CreateOrEdit>
-// );
+export const SubscriberCreateOrEdit = (props) => (
+  <CreateOrEdit {...props}>
+    <SimpleForm>
+      <TextField source="course" />
+      <TextField source="fullName" />
+      <TextField source="email" />
+      <TextField source="phone" />
+      <TextField source="neighborhood" />
+      <TextField source="city" />
+      <BooleanInput source="approved" />
+      <BooleanInput source="hackathon" />
+      <ArrayInput source="observation">
+        <SimpleFormIterator>
+          <TextInput source="autor" label="Author" />
+          <TextInput source="comment" label="Comment" />
+        </SimpleFormIterator>
+      </ArrayInput>
+    </SimpleForm>
+  </CreateOrEdit>
+);

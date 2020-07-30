@@ -2,7 +2,11 @@ import React from "react";
 import { Admin, Resource } from "react-admin";
 import { StudentCreateOrEdit, StudentList, StudentShow } from "./pages/Student";
 import { ClassCreateOrEdit, ClassList, ClassShow } from "./pages/Class";
-import { SubscriberList, SubscriberShow } from "./pages/Subscriber";
+import {
+  SubscriberList,
+  SubscriberShow,
+  SubscriberCreateOrEdit,
+} from "./pages/Subscriber";
 
 import {
   FirebaseAuthProvider,
@@ -35,7 +39,12 @@ function App() {
       theme={Theme}
       // customSagas={[firebaseRealtime]}
     >
-      <Resource name="subscriber" list={SubscriberList} show={SubscriberShow} />
+      <Resource
+        name="subscriber"
+        list={SubscriberList}
+        show={SubscriberShow}
+        edit={SubscriberCreateOrEdit}
+      />
       <Resource
         name="students"
         list={StudentList}
