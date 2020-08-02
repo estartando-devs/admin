@@ -14,6 +14,7 @@ import {
   ArrayInput,
   SimpleFormIterator,
   Filter,
+  ReferenceManyField,
 } from "react-admin";
 
 const SubscriberFilter = (props) => (
@@ -23,6 +24,7 @@ const SubscriberFilter = (props) => (
     <TextInput source="course" label="Course" alwaysOn />
   </Filter>
 );
+
 export const SubscriberList = (props) => (
   <List {...props} filters={<SubscriberFilter />}>
     <Datagrid rowClick="edit">
@@ -72,8 +74,19 @@ export const SubscriberCreateOrEdit = (props) => (
       <TextField source="fullName" />
       <TextField source="email" />
       <TextField source="phone" />
+      <TextField source="dateBirth" />
       <TextField source="neighborhood" />
       <TextField source="city" />
+      <ReferenceManyField
+        label="Comments"
+        reference="comment"
+        target="subscriber_id"
+      >
+        <Datagrid>
+          <TextField source="author" />
+          <TextField source="comment" />
+        </Datagrid>
+      </ReferenceManyField>
       <BooleanInput source="approved" />
       <BooleanInput source="hackathon" />
       <ArrayInput source="observation">

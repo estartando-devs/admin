@@ -7,6 +7,7 @@ import {
   SubscriberShow,
   SubscriberCreateOrEdit,
 } from "./pages/Subscriber";
+import { CommentList, CommentShow, CommentCreateOrEdit } from "./pages/Comment";
 
 import {
   FirebaseAuthProvider,
@@ -39,6 +40,13 @@ function App() {
       theme={Theme}
       // customSagas={[firebaseRealtime]}
     >
+      <Resource
+        name="comment"
+        list={CommentList}
+        show={CommentShow}
+        edit={CommentCreateOrEdit}
+        create={CommentCreateOrEdit}
+      />
       <Resource
         name="subscriber"
         list={SubscriberList}
