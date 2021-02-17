@@ -41,17 +41,17 @@ function App() {
       // customSagas={[firebaseRealtime]}
     >
       <Resource
+        name="subscriber"
+        list={SubscriberList}
+        show={SubscriberShow}
+        edit={SubscriberCreateOrEdit}
+      />
+      <Resource
         name="comment"
         list={CommentList}
         show={CommentShow}
         edit={CommentCreateOrEdit}
         create={CommentCreateOrEdit}
-      />
-      <Resource
-        name="subscriber"
-        list={SubscriberList}
-        show={SubscriberShow}
-        edit={SubscriberCreateOrEdit}
       />
       <Resource
         name="students"
