@@ -14,6 +14,10 @@ import {
   FirebaseDataProvider,
 } from "react-admin-firebase";
 import Theme from "./theme";
+import { 
+  SiteDataList,
+  SiteDataCreateOrEdit,
+  SiteDataShow, } from "./pages/SiteData";
 
 const config = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -66,6 +70,13 @@ function App() {
         edit={ClassCreateOrEdit}
         create={ClassCreateOrEdit}
         show={ClassShow}
+      />
+      <Resource
+        name="siteData"
+        list={SiteDataList}
+        edit={SiteDataCreateOrEdit}
+        create={SiteDataCreateOrEdit}
+        show={SiteDataShow}
       />
     </Admin>
   );
