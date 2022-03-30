@@ -22,6 +22,7 @@ const SubscriberFilter = (props) => (
     <TextInput source="fullName" label="Full Name" alwaysOn />
     <TextInput source="email" label="Email" alwaysOn />
     <TextInput source="course" label="Course" alwaysOn />
+    <BooleanInput source="approved" label="Approved" alwaysOn />
   </Filter>
 );
 
