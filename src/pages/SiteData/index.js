@@ -13,16 +13,29 @@ import {
   ArrayInput,
   SimpleFormIterator,
   ArrayField,
+  Button,
 } from "react-admin";
+import Card from "@material-ui/core/Card";
+import { runBuild } from "../../services/triggerAmplifyBuild";
 
 export const SiteDataList = (props) => (
-  <List {...props}>
-    <Datagrid>
-      <TextField source="title" />
-      <TextField source="path" />
-      <ShowButton label="" />
-    </Datagrid>
-  </List>
+  <Card>
+    <Button
+      label="Run build"
+      onClick={() => {
+        runBuild();
+        alert("Running build! Takes an average of 8 minutes");
+      }}
+      variant="contained"
+    />
+    <List {...props}>
+      <Datagrid>
+        <TextField source="title" />
+        <TextField source="path" />
+        <ShowButton label="" />
+      </Datagrid>
+    </List>
+  </Card>
 );
 
 export const SiteDataShow = (props) => (
