@@ -23,6 +23,7 @@ const SubscriberFilter = (props) => (
     <TextInput source="email" label="Email" alwaysOn />
     <TextInput source="course" label="Course" alwaysOn />
     <BooleanInput source="approved" label="Approved" alwaysOn />
+    <BooleanInput source="graduated" label="Graduated" alwaysOn />
   </Filter>
 );
 
@@ -33,6 +34,7 @@ export const SubscriberList = (props) => (
       <TextField source="email" />
       <BooleanField source="approved" />
       <BooleanField source="hackathon" />
+      <BooleanField source="graduated" />
       {/* <TextField source="phone" /> */}
       {/* <TextField source="neighborhood" /> */}
       <TextField source="city" />
@@ -57,6 +59,7 @@ export const SubscriberShow = (props) => (
       <BooleanField source="availableTime" />
       <BooleanField source="approved" />
       <BooleanField source="hackathon" />
+      <BooleanField source="graduated" />
       <TextField source="testimony" />
       <TextField source="observation" />
     </SimpleShowLayout>
@@ -90,6 +93,7 @@ export const SubscriberCreateOrEdit = (props) => (
       </ReferenceManyField>
       <BooleanInput source="approved" />
       <BooleanInput source="hackathon" />
+      <BooleanInput source="graduated" />
       <ArrayInput source="observation">
         <SimpleFormIterator>
           <TextInput source="autor" label="Author" />
