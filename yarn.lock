@@ -10018,10 +10018,10 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-admin-firebase@^3.2.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/react-admin-firebase/-/react-admin-firebase-3.3.2.tgz#a7aca9f80f29ac31a9607893d4b9440a3da206fb"
-  integrity sha512-lkt2N97hPFi/zaldOqlifLY6jL9dZjN/khzOKLlBLjD71t/zOAXbRkRH1aCA9/87OtPdSRcwcLGaHg6qvHbwyQ==
+react-admin-firebase@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/react-admin-firebase/-/react-admin-firebase-4.0.5.tgz#8b1e842df0cc2d9716982d1dc78c1cc4e4ebb152"
+  integrity sha512-gHfhaUVj75hpHsPVwkVzjD70w9VBf6OftuuNFu5Hjz1VyXJYQtB+ElDggbk/6+396prkbtSq0uxDolDC6c5eUg==
   dependencies:
     lodash "4.x"
     path-browserify "^1.0.0"
