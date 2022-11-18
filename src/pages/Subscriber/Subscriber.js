@@ -66,40 +66,45 @@ export const SubscriberShow = (props) => (
   </Show>
 );
 
-const CreateOrEdit = (props) => {
-  if (props.id) return <Edit title="Edit Subscriber" {...props} />;
-  return <Create title="Create Subscriber" {...props} />;
-};
+export const SubscriberCreateOrEdit = () => (
+  <SimpleForm>
+    <TextField source="course" />
+    <TextField source="fullName" />
+    <TextField source="email" />
+    <TextField source="phone" />
+    <TextField source="dateBirth" />
+    <TextField source="neighborhood" />
+    <TextField source="city" />
+    <ReferenceManyField
+      label="Comments"
+      reference="comment"
+      target="subscriber_id"
+    >
+      <Datagrid>
+        <TextField source="author" />
+        <TextField source="comment" />
+      </Datagrid>
+    </ReferenceManyField>
+    <BooleanInput source="approved" />
+    <BooleanInput source="hackathon" />
+    <BooleanInput source="graduated" />
+    <ArrayInput source="observation">
+      <SimpleFormIterator>
+        <TextInput source="autor" label="Author" />
+        <TextInput source="comment" label="Comment" />
+      </SimpleFormIterator>
+    </ArrayInput>
+  </SimpleForm>
+);
 
-export const SubscriberCreateOrEdit = (props) => (
-  <CreateOrEdit {...props}>
-    <SimpleForm>
-      <TextField source="course" />
-      <TextField source="fullName" />
-      <TextField source="email" />
-      <TextField source="phone" />
-      <TextField source="dateBirth" />
-      <TextField source="neighborhood" />
-      <TextField source="city" />
-      <ReferenceManyField
-        label="Comments"
-        reference="comment"
-        target="subscriber_id"
-      >
-        <Datagrid>
-          <TextField source="author" />
-          <TextField source="comment" />
-        </Datagrid>
-      </ReferenceManyField>
-      <BooleanInput source="approved" />
-      <BooleanInput source="hackathon" />
-      <BooleanInput source="graduated" />
-      <ArrayInput source="observation">
-        <SimpleFormIterator>
-          <TextInput source="autor" label="Author" />
-          <TextInput source="comment" label="Comment" />
-        </SimpleFormIterator>
-      </ArrayInput>
-    </SimpleForm>
-  </CreateOrEdit>
+export const SubscriberCreate = (props) => (
+  <Create title="Create Subscriber" {...props}>
+    <SubscriberCreateOrEdit />
+  </Create>
+);
+
+export const SubscriberEdit = (props) => (
+  <Edit title="Edit Subscriber" {...props}>
+    <SubscriberCreateOrEdit />
+  </Edit>
 );

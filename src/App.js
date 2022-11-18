@@ -2,11 +2,7 @@ import React from "react";
 import { Admin, Resource } from "react-admin";
 import { StudentCreateOrEdit, StudentList, StudentShow } from "./pages/Student";
 import { ClassCreateOrEdit, ClassList, ClassShow } from "./pages/Class";
-import {
-  SubscriberList,
-  SubscriberShow,
-  SubscriberCreateOrEdit,
-} from "./pages/Subscriber";
+import { subscriberResource } from "./pages/Subscriber";
 import { CommentList, CommentShow, CommentCreateOrEdit } from "./pages/Comment";
 
 import {
@@ -14,10 +10,11 @@ import {
   FirebaseDataProvider,
 } from "react-admin-firebase";
 import Theme from "./theme";
-import { 
+import {
   SiteDataList,
   SiteDataCreateOrEdit,
-  SiteDataShow, } from "./pages/SiteData";
+  SiteDataShow,
+} from "./pages/SiteData";
 
 const config = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -44,12 +41,7 @@ function App() {
       theme={Theme}
       // customSagas={[firebaseRealtime]}
     >
-      <Resource
-        name="subscriber"
-        list={SubscriberList}
-        show={SubscriberShow}
-        edit={SubscriberCreateOrEdit}
-      />
+      <Resource {...subscriberResource} />
       <Resource
         name="comment"
         list={CommentList}
