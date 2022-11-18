@@ -1,6 +1,6 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createTheme } from "@material-ui/core";
 
-const Theme = createMuiTheme({
+const Theme = createTheme({
   palette: {
     type: "light",
     primary: {

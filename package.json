@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.2",
-    "firebase": "^7.19.0",
+    "firebase": "^9.14.0",
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^3.8.2",
     "react": "^16.13.1",
-    "react-admin": "^3.8.2",
+    "react-admin": "^4.5.2",
     "react-admin-firebase": "^4.0.5",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
